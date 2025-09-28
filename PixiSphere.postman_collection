@@ -1,0 +1,669 @@
+{
+	"info": {
+		"_postman_id": "66d8fc3f-a435-43cd-87ac-a8ff1abe9665",
+		"name": "PixiSphere",
+		"description": "StartFragmentPixisphere is a full-stack AI-powered photography service marketplace that connects  \nclients with verified photographers and studios across India. It's engineered to handle  \nend-to-end workflows: from discovery and shortlisting, through intelligent lead distribution,  \nto post-booking lifecycle management.EndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37731620"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Shivam Soni\",\r\n    \"email\": \"legendshivam11@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"city\":\"Delhi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"legendshivam11@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"legendshivam11@gmail.com\",\r\n    \"code\": \"663518\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/auth/verify"
+					},
+					"response": []
+				},
+				{
+					"name": "Resend Code",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth/resend-code?email=showyamato25@gmail.com",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"resend-code"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "showyamato25@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/auth/get"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/auth/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"maternity\",\r\n    \"description\": \"This is categry\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/category"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/category"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/category/68d839c3209ba95d7d018fbc"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/category/68d839c3209ba95d7d018fbc"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\": \"Kolkta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/location"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/location"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\": \"Kolkata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/location/68d83cab83def89f6ff0b675"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/location/68d83cab83def89f6ff0b675"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Portfolio",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "descriptions",
+									"value": "File 1",
+									"type": "text"
+								},
+								{
+									"key": "descriptions",
+									"value": "File 2",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Shivam Soni/Coding/pixisphere/public/images/clickfactory.jpg"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Shivam Soni/Coding/pixisphere/public/images/neha1.jpg"
+								}
+							]
+						},
+						"url": "{{baseUrl}}/portfolio"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/portfolio/68d8c4328513bad7a70e45b3"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user porfolio",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "descriptions",
+									"value": "File 1",
+									"type": "text"
+								},
+								{
+									"key": "descriptions",
+									"value": "File 2",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Shivam Soni/Coding/pixisphere/public/images/clickfactory.jpg"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Shivam Soni/Coding/pixisphere/public/images/neha1.jpg"
+								}
+							]
+						},
+						"url": "{{baseUrl}}/portfolio/user/68d82bb908f073613842a723"
+					},
+					"response": []
+				},
+				{
+					"name": "Reorder images",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"media\": [\r\n        {\r\n            \"index\": 1,\r\n            \"url\": \"https://res.cloudinary.com/dv3qbj0bn/image/upload/v1759036465/pixi-sphere/i59in6xk8rrbqr73xdch.jpg\",\r\n            \"description\": \"File 1\",\r\n            \"_id\": \"68d8c4328513bad7a70e45b4\"\r\n        },\r\n        {\r\n            \"index\": 0,\r\n            \"url\": \"https://res.cloudinary.com/dv3qbj0bn/image/upload/v1759036465/pixi-sphere/lrlok9ti1rfzhoducta3.jpg\",\r\n            \"description\": \"File 2\",\r\n            \"_id\": \"68d8c4328513bad7a70e45b5\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/portfolio/reorder/68d8c4328513bad7a70e45b3"
+					},
+					"response": []
+				},
+				{
+					"name": "Add images",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "descriptions",
+									"value": "File 1",
+									"type": "text"
+								},
+								{
+									"key": "descriptions",
+									"value": "File 2",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Shivam Soni/Coding/pixisphere/public/images/neha2.jpg"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Shivam Soni/Coding/pixisphere/public/images/neha.jpg"
+								}
+							]
+						},
+						"url": "{{baseUrl}}/portfolio/68d8c4328513bad7a70e45b3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete image",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": \"https://res.cloudinary.com/dv3qbj0bn/image/upload/v1759036465/pixi-sphere/lrlok9ti1rfzhoducta3.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/portfolio/image/68d8c4328513bad7a70e45b3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"profile\": \"68d82bb908f073613842a723\",\r\n    \"rating\": 4.5,\r\n    \"comment\": \"Very good scenes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/review"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 3.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/review/68d902f343cf306f5c39b876"
+					},
+					"response": []
+				},
+				{
+					"name": "Profile reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/review/68d82bb908f073613842a723"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/review/68d902f343cf306f5c39b876"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enquiry",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"birthday\",\r\n    \"date\": \"2025-09-30T10:06:49.358Z\",\r\n    \"budget\": 15000,\r\n    \"city\": \"Delhi\",\r\n    \"message\": \"What's your price\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/enquiry"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"birthday\",\r\n    \"date\": \"2025-09-30T10:06:49.358Z\",\r\n    \"budget\": 15000,\r\n    \"city\": \"Delhi\",\r\n    \"message\": \"What's your price\"\r\n}"
+						},
+						"url": "{{baseUrl}}/enquiry"
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific enquiry",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{baseUrl}}/enquiry/68d90995b5321dbffb6db1da"
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"closed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/enquiry/68d90995b5321dbffb6db1da"
+					},
+					"response": []
+				},
+				{
+					"name": "Assign",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partners\": [\"68d82bb908f073613842a723\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/enquiry/assign/68d90995b5321dbffb6db1da"
+					},
+					"response": []
+				},
+				{
+					"name": "Unassign",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partners\": [\"68d82bb908f073613842a723\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/enquiry/unassign/68d90995b5321dbffb6db1da"
+					},
+					"response": []
+				},
+				{
+					"name": "Partner enquiries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/enquiry/partner/68d82bb908f073613842a723"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Dashboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/admin/dashboard"
+					},
+					"response": []
+				},
+				{
+					"name": "Get pending verifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/admin/verifications"
+					},
+					"response": []
+				},
+				{
+					"name": "Update verification status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"verified\",\r\n    \"comment\": \"You have maintained portfolio\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/admin/status/68d82bb908f073613842a723"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": ""
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": ""
+		}
+	]
+}
