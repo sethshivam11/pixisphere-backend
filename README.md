@@ -13,6 +13,12 @@ Pixisphere is not a typical marketplace. It operates with complex, role-based us
 multi-model data structures, AI-aided matching, and moderated interactions — all while
 being scale-ready for high-traffic content management and real-time services.
 
+## Environment Variables
+
+To run this project, you will need to add following environment variables to your .env file
+
+See [.env.sample](https://github.com/sethshivam11/pixisphere-backend/blob/main/.env.sample)
+
 ## Run Locally
 
 Clone the project
